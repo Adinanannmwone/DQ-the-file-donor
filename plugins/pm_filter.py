@@ -605,7 +605,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 logger.exception(e)
             f_caption = f_caption
         if f_caption is None:
-            f_caption = f"▷ {files.file_name}"
+            f_caption = f" {files.file_name}"
 
         try:
             if (AUTH_CHANNEL or REQ_CHANNEL) and not await is_subscribed(client, query):
@@ -1441,7 +1441,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f" [{get_size(file.file_size)}] ▷ {file.file_name}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                    text=f" [{get_size(file.file_size)}]  {file.file_name}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
             ]
             for file in files
